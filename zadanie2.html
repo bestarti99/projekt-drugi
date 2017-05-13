@@ -6,11 +6,21 @@
        
        <script type="text/javascript">
            
-          function wypisz();
+          function wypisz()
            {
+           //pobranie wartości z pól formularza
+           var liczba1 = document.getElementById("pole1").value;
+           var liczba2 = document.getElementById("pole2").value;
                
-               
-               
+           //dodaję zmienną, która umożliwi wyświetlenie kolejjnych elementów pętli
+            var napis = "";
+
+           //wyliczenie  kolejnych liczb ciągu w pętli
+            for (i=liczba1; i<=liczba2; i++)
+               {
+                   napis = napis +i+ " ";                   
+               }
+               document.getElementById("wynik").innerHTML = napis;
            }
            
           
@@ -19,9 +29,12 @@
    </head>
    
    <body>
-      <input type="text"/>
-      <input type="text"/>
-      <input type="submit" value="Pokaż" onclick="wypisz()"/>
+      <input type="text" id="pole1" />
+      <input type="text" id="pole2" />
+      <input type="submit" value="Pokaż" onclick="wypisz()" />
+      
+      <!-- stworzenie konterera do wyświetlenia wyniku -->
+      <div id="wynik"></div>
       
    </body>
 </html>

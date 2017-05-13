@@ -9,9 +9,13 @@
            function sprawdz()
            {
                //pobranie liczby z pola edycyjnego 0 złapanie uchwytu (getElementById)
-               
                var liczba = document.getElementById("pole").value;
-               document.write(liczba);
+               
+               // sprawdzennie jaka jest ta liczba, poprzez innerHTML
+               if (liczba>0) document.getElementById("wynik").innerHTML="dodatnia";
+               else if (liczba<0) document.getElementById("wynik").innerHTML="ujemna";
+               else if (liczba==0) document.getElementById("wynik").innerHTML="zero";
+               else document.getElementById("wynik").innerHTML="to nie jest liczba";
                
            }
            
@@ -24,6 +28,7 @@
       <input type="text" id="pole">
       <input type="submit" value="Sprawdź" onclick="sprawdz()"> 
        
+        <div id="wynik"></div>
                      
    </body>
 </html>
